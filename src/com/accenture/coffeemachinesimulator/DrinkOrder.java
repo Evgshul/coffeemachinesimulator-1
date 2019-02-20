@@ -15,7 +15,9 @@ public class DrinkOrder implements CoffeeMachine{
 
     @Override
     public Drink make(DrinkOrder drinkOrder) {
-        return null;
+        System.out.println("Your " + drinkOrder.getName());
+
+        return drinkOrder.getDrinkType();
     }
 
     @Override
@@ -31,5 +33,13 @@ public class DrinkOrder implements CoffeeMachine{
     @Override
     public boolean isBusy() throws InterruptedException {
         return false;
+    }
+
+    public Drink getDrinkType() {
+        return drinkType;
+    }
+
+    public String getName() {
+        return name;
     }
 }

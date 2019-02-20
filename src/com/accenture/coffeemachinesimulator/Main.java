@@ -54,17 +54,14 @@ public class Main {
         double money = read.nextDouble();
 
         System.out.println("You ordered " + coffeeType + " and paid " + money);
-        DrinkOrder order;
+        DrinkOrder order = null;
         for (DrinkType drinkType : drinkTypes) {
-            if(drinkType.getName()== coffeeType) {
+            if(coffeeType.equals(drinkType.getName())) {
                 order = new DrinkOrder(drinkType, drinkType.getName(), drinkType.getPrice(), 1);
             }
         }
 
-
-
-        order.make()
-
+        order.make(order);
     }
 
     private static void printOutDrinkList(List<DrinkType> drinkTypes) {
