@@ -55,7 +55,12 @@ public class DrinkOrder implements CoffeeMachine{
 
     @Override
     public boolean validateOrder(DrinkOrder order) {
-
+        for (DrinkType type : drinkTypes) {
+            if(type.equals(order.getName())) {
+                return true;
+            }
+        }
+        System.out.println("Sorry, no coffee for you.");
         return false;
     }
 

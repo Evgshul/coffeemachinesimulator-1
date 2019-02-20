@@ -33,13 +33,22 @@ public class Main {
 
         System.out.println("You ordered " + coffeeType + " and paid " + money);
         DrinkOrder newOrder = null;
+        boolean doWeHaveACoffee = false;
         for (DrinkType drinkType : order.drinkTypes) {
             if(coffeeType.equals(drinkType.getName())) {
                 newOrder = new DrinkOrder(drinkType, drinkType.getName(), drinkType.getPrice(), 1);
+           doWeHaveACoffee = true;
             }
         }
+        if(doWeHaveACoffee == false) {
+            System.out.println("Sorry, no coffee for you.");
+
+        } else {
             order.validateOrder(newOrder);
             order.make(newOrder);
+        }
+
+
     }
 
     private static void printOutDrinkList(List<DrinkType> drinkTypes) {
