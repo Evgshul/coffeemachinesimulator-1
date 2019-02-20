@@ -1,7 +1,10 @@
 package com.accenture.coffeemachinesimulator;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 //    Print out what I can order
 //    Cappucciono
 //    Black coffee
@@ -43,10 +46,32 @@ public class Main {
         drinkTypes.add(new DrinkType("Latte", 1.00, latte));
 
         System.out.println("Choose coffee type:");
+        printOutDrinkList(drinkTypes);
+
+        Scanner read = new Scanner(System.in);
+        String coffeeType = read.next();
+        System.out.println("Enter the amount of money");
+        double money = read.nextDouble();
+
+        System.out.println("You ordered " + coffeeType + " and paid " + money);
+        DrinkOrder order;
+        for (DrinkType drinkType : drinkTypes) {
+            if(drinkType.getName()== coffeeType) {
+                order = new DrinkOrder(drinkType, drinkType.getName(), drinkType.getPrice(), 1);
+            }
+        }
 
 
-        DrinkOrder order = new DrinkOrder();
+
+        order.make()
+
     }
 
-    private static
+    private static void printOutDrinkList(List<DrinkType> drinkTypes) {
+        for (DrinkType drinkType : drinkTypes) {
+            System.out.print(drinkType.getName());
+            System.out.println("....." + drinkType.getPrice());
+        }
+
+    }
 }

@@ -28,4 +28,28 @@ public class DrinkType implements Drink {
     public List<String> getIngredients() {
         return null;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public List<String> getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(List<String> recipe) {
+        this.recipe = recipe;
+    }
 }

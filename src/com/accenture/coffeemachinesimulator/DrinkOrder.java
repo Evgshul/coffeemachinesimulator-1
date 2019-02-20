@@ -6,6 +6,13 @@ public class DrinkOrder implements CoffeeMachine{
     private double money;
     private int sugar;
 
+    public DrinkOrder(Drink drinkType, String name, double money, int sugar) {
+        this.drinkType = drinkType;
+        this.name = name;
+        this.money = money;
+        this.sugar = sugar;
+    }
+
     @Override
     public Drink make(DrinkOrder drinkOrder) {
         return null;
