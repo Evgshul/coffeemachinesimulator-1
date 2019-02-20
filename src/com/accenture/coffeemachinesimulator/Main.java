@@ -17,9 +17,6 @@ import java.util.Scanner;
 //    so in the end coffee machine will bring me out coffee + 0,50
 public class Main {
 
-
-
-
     public static void main(String[] args) {
 
         DrinkOrder order = new DrinkOrder();
@@ -35,14 +32,14 @@ public class Main {
 
 
         System.out.println("You ordered " + coffeeType + " and paid " + money);
-        DrinkOrder order = null;
-        for (DrinkType drinkType : drinkTypes) {
+        DrinkOrder newOrder = null;
+        for (DrinkType drinkType : order.drinkTypes) {
             if(coffeeType.equals(drinkType.getName())) {
-                order = new DrinkOrder(drinkType, drinkType.getName(), drinkType.getPrice(), 1);
+                newOrder = new DrinkOrder(drinkType, drinkType.getName(), drinkType.getPrice(), 1);
             }
         }
-            order.validateOrder(order);
-            order.make(order);
+            order.validateOrder(newOrder);
+            order.make(newOrder);
     }
 
     private static void printOutDrinkList(List<DrinkType> drinkTypes) {
